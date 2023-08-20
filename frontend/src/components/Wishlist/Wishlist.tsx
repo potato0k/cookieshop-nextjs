@@ -103,21 +103,6 @@ export const Wishlist = () => {
                 >
                   Clear Wishlist
                 </Button>
-                <Link href='/checkout'>
-                  <Button
-                    bgColor='brand.primary'
-                    color='white'
-                    _hover={{
-                      bgColor: 'brand.primaryLight'
-                    }}
-                    _active={{
-                      bgColor: 'brand.primaryLight'
-                    }}
-                    onClick={handleCheckout}
-                  >
-                    Checkout
-                  </Button>
-                </Link>
               </Box>
               <Box fontWeight='bold'>
                 Total: $ {calculateItemsTotal(wishlist)}

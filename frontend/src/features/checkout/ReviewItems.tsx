@@ -33,7 +33,8 @@ export const ReviewItems = () => {
                 <Link href={`/products/${item.slug}`}>
                   <Image
                     src={item.mainImage}
-                    objectFit='contain'
+                    objectFit='cover'
+                    rounded='lg'
                     boxSize='100px'
                     alt={item.name}
                     _hover={{ cursor: 'pointer' }}

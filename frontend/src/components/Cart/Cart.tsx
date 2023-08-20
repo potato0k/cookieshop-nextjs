@@ -14,7 +14,7 @@ import {
   Text,
   useDisclosure
 } from '@chakra-ui/react'
-import { AppContext } from '@src/context/AppContext'
+import { AppContext } from '@/context/AppContext'
 import { calculateItemsTotal } from '@src/helpers'
 import Link from 'next/link'
 import { useContext, useRef } from 'react'
@@ -105,14 +105,7 @@ export const Cart = () => {
                 </Button>
                 <Link href='/checkout'>
                   <Button
-                    bgColor='brand.primary'
-                    color='white'
-                    _hover={{
-                      bgColor: 'brand.primaryLight'
-                    }}
-                    _active={{
-                      bgColor: 'brand.primaryLight'
-                    }}
+                    variant='outline'
                     onClick={handleCheckout}
                   >
                     Checkout

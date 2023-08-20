@@ -19,16 +19,11 @@ import {
   useOutsideClick
 } from '@chakra-ui/react'
 import { IProduct } from '@src/model'
-import { client } from '@utils/sanity.client'
+import { client } from '@sanity/lib/client'
 import { groq } from 'next-sanity'
 import { useEffect, useRef, useState } from 'react'
 
 import React from 'react'
-import {
-  dropDownStyles,
-  searchInputStyles,
-  wrapperContainerStyles
-} from './style'
 import { SearchIcon } from '@chakra-ui/icons'
 import { SearchedProductList } from './SearchedProductList'
 

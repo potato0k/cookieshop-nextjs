@@ -1,12 +1,15 @@
 'use client'
 
-import { Flex, Text } from '@chakra-ui/react'
+import { Flex, Text, useDisclosure } from '@chakra-ui/react'
 import Link from 'next/link'
 import React from 'react'
 
-export const Logo = () => {
+interface LogoProps {
+ onclick?: () => void 
+}
+export const Logo = ({onclick}: LogoProps) => {
   return (
-    <Link href='/'>
+    <Link href='/' onClick={onclick}>
       <Flex gap="1">
         <Text fontWeight='bold' fontSize='lg' color='brand.primary'>
           Cookie

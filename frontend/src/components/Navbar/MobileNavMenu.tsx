@@ -39,20 +39,22 @@ export const MobileNavMenu = () => {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader>
-            <Logo />
+            <Logo onclick={onClose}/>
           </DrawerHeader>
 
           <DrawerBody>
             {navItems.map(navItem => (
-              <Box
-                key={navItem.label}
-                p='0.5rem'
-                rounded='sm'
-                fontSize='xl'
-                _hover={{ bgColor: 'brand.primaryLight', color: 'white' }}
-              >
-                <Link href={navItem.href} onClick={onClose}>{navItem.label}</Link>
-              </Box>
+              <Link href={navItem.href} onClick={onClose}>
+                <Box
+                  key={navItem.label}
+                  p='0.5rem'
+                  rounded='sm'
+                  fontSize='xl'
+                  _hover={{ bgColor: 'brand.primaryLight', color: 'white' }}
+                >
+                  {navItem.label}
+                </Box>
+              </Link>
             ))}
           </DrawerBody>
 

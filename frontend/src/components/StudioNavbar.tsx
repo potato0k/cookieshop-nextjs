@@ -1,6 +1,6 @@
 'use client'
 
-import { colors } from '@src/app/theme'
+import { colors } from '@src/styles/theme'
 import Link from 'next/link'
 import { CSSProperties } from 'react'
 import { NavbarProps } from 'sanity'

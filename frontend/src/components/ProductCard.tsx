@@ -66,7 +66,7 @@ export const ProductCard = ({ product }: IProductCardProps) => {
                 <Text fontSize={{ base: 'xs', md: 'sm' }}>{product.price}</Text>
               </Flex>
             </Flex>
-            <Text>{product.description.substring(0, 45)}...</Text>
+            <Text>{getSubstring(product.description,20)}...</Text>
             <Rating rating={product.rating} />
             <AddToCartButton product={product} count={1} />
           </Flex>

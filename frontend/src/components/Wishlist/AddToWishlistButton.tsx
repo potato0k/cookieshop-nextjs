@@ -19,14 +19,13 @@ export const AddToWishlistButton = ({ product }: IAddToWishlistProps) => {
           variant='outline'
           bgColor='transparent'
           borderColor="gray.200"
-          color="red"
-          borderRadius="50px"
-          _hover={{ bgColor: 'transparent' }}
           rounded='full'
           cursor='pointer'
           mr='1rem'
           my='0.5rem'
           size="sm"
+          color="gray.500"
+          borderRadius="50px"
           onClick={() => removeItem('wishlist', product.id)}
         >
           <BsHeartFill size={20} />
@@ -36,16 +35,16 @@ export const AddToWishlistButton = ({ product }: IAddToWishlistProps) => {
         <Button
           variant='outline'
           bgColor='transparent'
-          _hover={{ bgColor: 'transparent' }}
           rounded='full'
           cursor='pointer'
+          borderColor='brand.primary'
           onClick={() => addItem('wishlist', product)}
-          borderColor="gray.200"
           color="red"
           mr='1rem'
           my='0.5rem'
           size="sm"
           borderRadius="50px"
+          
         >
           <BsHeart size={20} />
           <Text mx='1.5'>Add to Wishlist</Text>

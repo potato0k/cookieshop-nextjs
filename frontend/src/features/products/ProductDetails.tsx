@@ -67,7 +67,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
           <Image
             src={product?.mainImage}
             alt={product.name}
-            width={{ base:'auto', md:'300px', '2xl': '611px' }}
+            width={{ base: 'auto', md: '300px', '2xl': '611px' }}
             objectFit='cover'
             rounded='lg'
             shadow='lg'
@@ -113,14 +113,13 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
             <Link href='/checkout'>
               <Button
                 variant='outline'
-                bgColor='brand.primary'
-                color='white'
+                borderColor='brand.primary'
+                color='brand.primary'
                 borderRadius='50px'
-                size='sm'
-                w='160px'
                 mr='1rem'
                 my='0.5rem'
-                _hover={{ bgColor: 'none' }}
+                size='sm'
+                w='150px'
                 onClick={() => {
                   resetItems('checkout')
                   addItem('checkout', product, quantity)

@@ -1,6 +1,6 @@
 'use client'
 
-import { colors } from '@/app/theme'
+import { colors } from '@src/styles/theme'
 import { IRating } from '@/model'
 import { Flex, Text } from '@chakra-ui/react'
 import React from 'react'

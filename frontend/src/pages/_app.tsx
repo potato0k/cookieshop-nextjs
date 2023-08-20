@@ -1,33 +1,37 @@
-import Layout from '@/components/Layout/Layout';
-import '@/styles/globals.css'
+import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
-import { Montserrat, Poppins } from 'next/font/google'
+import type { ReactElement, ReactNode } from 'react'
+import { ChakraProvider } from '@chakra-ui/react'
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  style: ["italic", "normal"],
-  variable: "--font-poppins",
-});
+import { AppContextProvider } from '@src/context/AppContext'
+import { Navbar } from '@/components/Navbar/Navbar'
+import { Footer } from '@src/components/Footer/Footer'
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  style: ["italic", "normal"],
-  variable: "--font-monserrat",
-});
+import '@/styles/globals.css'
+import { theme } from '@/styles/theme'
+import Layout from '@src/components/Layout/Layout'
 
-export default function App({ Component, pageProps }: AppProps) {
-  return (
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode
+}
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
+
+export default function App ({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? (page => page)
+
+  return getLayout(
     <>
-      <style jsx global>{`
-        html {
-          font-family: ${poppins.style.fontFamily},
-          ${montserrat.style.fontFamily};
-        }
-      `}</style>
-      <Layout><Component {...pageProps} /></Layout>
+      <Component {...pageProps} />
 
+      {/* <ChakraProvider theme={theme}>
+        <AppContextProvider>
+          <Navbar />
+          <Footer />
+        </AppContextProvider>
+      </ChakraProvider> */}
     </>
-  );
-};
+  )
+}
