@@ -1,16 +1,16 @@
-   
-
 import {
   Box,
   Card,
   CardBody,
+  Center,
   Flex,
   Heading,
   Image,
+  Spinner,
   Stack,
   Text
 } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import { Rating } from './Rating'
 import { AddToCartButton } from './Cart/AddToCartButton'
 import { IProduct } from '@/model'
@@ -23,12 +23,13 @@ interface IProductCardProps {
 }
 
 export const ProductCard = ({ product }: IProductCardProps) => {
+  const [isLoading, setIsLoading] = useState(true)
   return (
     <Card
       w={{ base: '3xs', md: 'xs' }}
       pos='relative'
       m='0.5rem'
-      h={{ base:'350px', md:'430px' }}
+      h={{ base: '350px', md: '430px' }}
       direction='column'
       mx='auto'
     >
@@ -36,7 +37,21 @@ export const ProductCard = ({ product }: IProductCardProps) => {
         <Flex mt='5' flexDir='column'>
           <AddToWishlist product={product} />
           <Link href={`/products/${product.slug}`}>
+            {isLoading && (
+              <Center mx='auto' boxSize={{ base: '100', md: '200' }}>
+                <Spinner
+                  thickness='4px'
+                  speed='0.65s'
+                  emptyColor='gray.200'
+                  color='brand.primary'
+                  size='xl'
+                />
+              </Center>
+            )}
             <Image
+              onLoad={() => {
+                setIsLoading(false)
+              }}
               objectFit='cover'
               boxSize={{ base: '100', md: '200' }}
               alt={product.name}
@@ -44,6 +59,7 @@ export const ProductCard = ({ product }: IProductCardProps) => {
               mx='auto'
               mb='0.8rem'
               borderRadius='lg'
+              display={isLoading ? 'none' : 'block'}
             />
             {/* <Box
               boxSize={{ base: '125px', lg: '200px' }}
@@ -66,7 +82,7 @@ export const ProductCard = ({ product }: IProductCardProps) => {
                 <Text fontSize={{ base: 'xs', md: 'sm' }}>{product.price}</Text>
               </Flex>
             </Flex>
-            <Text>{getSubstring(product.description,20)}...</Text>
+            <Text>{getSubstring(product.description, 20)}...</Text>
             <Rating rating={product.rating} />
             <AddToCartButton product={product} count={1} />
           </Flex>

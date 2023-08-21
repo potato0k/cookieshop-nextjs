@@ -18,6 +18,7 @@ export const bannerStyles: FlexProps = {
 }
 
 export const bannerHeadingStyles: HeadingProps = {
+  letterSpacing: 3,
   fontSize: { base: '3xl', lg: '6xl' },
   lineHeight: { base: '2.2rem', lg: '4rem' },
   color: 'brand.primary'

@@ -1,15 +1,14 @@
-   
-
 import {
   Box,
   Button,
+  Center,
   Flex,
   Heading,
   Image,
+  Spinner,
   Stack,
   Text
 } from '@chakra-ui/react'
-import React from 'react'
 import {
   bannerBtnStyles,
   bannerHeadingStyles,
@@ -17,9 +16,13 @@ import {
   bannerStyles,
   bannerTextStyles
 } from './styles'
+
 import Link from 'next/link'
+import { useState } from 'react'
 
 export const Banner = () => {
+  const [isLoading, setIsLoading] = useState(true)
+
   return (
     <Flex {...bannerStyles}>
       <Box w={{ base: '100%', lg: '50%' }}>
@@ -36,7 +39,27 @@ export const Banner = () => {
         </Stack>
       </Box>
       <Box w={{ base: '100%', lg: '50%' }} mt='1rem'>
-        <Image src='cookie_banner.png' alt='banner_img' {...bannerImageStyles}></Image>
+        {isLoading && (
+          <Center mx='auto'>
+            <Spinner
+              thickness='4px'
+              speed='0.65s'
+              emptyColor='gray.200'
+              color='brand.primary'
+              size='xl'
+            />
+          </Center>
+        )}
+
+        <Image
+          onLoad={() => {
+            setIsLoading(false)
+          }}
+          src='cookie_banner.png'
+          alt='banner_img'
+          {...bannerImageStyles}
+          display={isLoading ? 'none' : 'block'}
+        ></Image>
       </Box>
     </Flex>
   )

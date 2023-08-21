@@ -1,20 +1,20 @@
-   
-
 import {
   Box,
   Button,
   ButtonProps,
   Card,
   CardProps,
+  Center,
   Heading,
   HeadingProps,
   Image,
+  Spinner,
   Stack,
   Text,
   TextProps
 } from '@chakra-ui/react'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 
 interface IHeroProps {
   title?: string
@@ -31,6 +31,7 @@ export const Hero = ({
   btnLink,
   imgStr
 }: IHeroProps) => {
+  const [isLoading, setIsLoading] = useState(true)
   return (
     <Card {...heroCardStyles}>
       <Box w={{ base: '100%', md: '50%' }} mx='auto' mb='2rem'>
@@ -43,13 +44,28 @@ export const Hero = ({
         </Stack>
       </Box>
       <Box w={{ base: '100%', sm: '50%' }} mx='auto'>
+        {isLoading && (
+          <Center mx='auto'>
+            <Spinner
+              thickness='4px'
+              speed='0.65s'
+              emptyColor='gray.200'
+              color='brand.primary'
+              size='xl'
+            />
+          </Center>
+        )}
         <Image
+          onLoad={() => {
+            setIsLoading(false)
+          }}
           w={{ base: '100%', '2xl': '611px' }}
           src={imgStr}
           alt={title}
           objectFit='cover'
           rounded='md'
           mx='auto'
+          display={isLoading ? 'none' : 'block'}
         />
       </Box>
     </Card>
