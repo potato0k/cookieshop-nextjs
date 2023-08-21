@@ -81,8 +81,6 @@ export async function getStaticProps (context: NextPageContext) {
 
   const featuredItems = await client.fetch(getAllFeaturedItemsQueries)
 
-  console.log(featuredItems)
-
   return {
     props: {
       featuredItems

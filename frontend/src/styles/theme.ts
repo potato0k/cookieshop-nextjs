@@ -1,6 +1,9 @@
 import React from 'react'
 import { extendTheme } from '@chakra-ui/react'
 import { buildLegacyTheme } from 'sanity'
+import '@fontsource/poppins'
+import '@fontsource/open-sans'
+import '@fontsource/montserrat'
 
 export const colors = {
   brand: {
@@ -10,7 +13,12 @@ export const colors = {
   }
 }
 
-export const theme = extendTheme({ colors })
+export const fonts = {
+  heading: "'Poppins', sans-serif",
+  body: "'Montserrat', sans-serif"
+}
+
+export const theme = extendTheme({ colors, fonts })
 
 const props = {
   '--cs-white': '#fff',
@@ -21,7 +29,7 @@ const props = {
   '--brand-primary-dark': colors.brand.primaryDark
 }
 
-export const csTheme = buildLegacyTheme({ 
+export const csTheme = buildLegacyTheme({
   '--black': props['--cs-black'],
   '--white': props['--cs-white'],
   '--focus-color': props['--brand-primary-dark'],
@@ -30,5 +38,5 @@ export const csTheme = buildLegacyTheme({
   '--component-text-color': props['--cs-black'],
   '--default-button-color': props['--cs-gray'],
   '--default-button-primary-color': props['--brand-primary'],
-  '--state-info-color': props['--brand-primary-light'],
+  '--state-info-color': props['--brand-primary-light']
 })

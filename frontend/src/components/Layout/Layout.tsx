@@ -31,14 +31,8 @@ export default function Layout ({ children, isAdminPage = false }: LayoutProps) 
     <>
       {!isAdminPage ? (
         <>
-          <style jsx global>{`
-            html {
-              font-family: ${poppins.style.fontFamily},
-                ${montserrat.style.fontFamily};
-            }
-          `}</style>
           <CacheProvider>
-            <ChakraProvider theme={theme} cssVarsRoot={undefined}>
+            <ChakraProvider theme={theme}>
               <AppContextProvider>
                 <Navbar />
                 <Box flex={1}>{children}</Box>

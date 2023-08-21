@@ -34,7 +34,7 @@ export const Hero = ({
   return (
     <Card {...heroCardStyles}>
       <Box w={{ base: '100%', md: '50%' }} mx='auto' mb='2rem'>
-        <Stack w={{ base: '100%', '2xl': '50%' }} gap='3' mx='auto' pr='1rem'>
+        <Stack w={{ base: '100%', '2xl': '80%' }} gap='2' mx='auto' pr='1rem'>
           <Heading {...bannerHeadingStyles}>{title}</Heading>
           <Text {...bannerTextStyles}>{description}</Text>
           <Link href={btnLink}>
@@ -70,9 +70,10 @@ const heroCardStyles: CardProps = {
 }
 
 export const bannerHeadingStyles: HeadingProps = {
-  fontSize: { base: '3xl', lg: '6xl' },
+  fontSize: { base: '3xl', lg: '5xl' },
   lineHeight: { base: '2.2rem', lg: '4rem' },
-  color: 'brand.primary'
+  color: 'brand.primary',
+  letterSpacing: 3
 }
 
 export const bannerTextStyles: TextProps = {

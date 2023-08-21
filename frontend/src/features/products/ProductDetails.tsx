@@ -1,4 +1,3 @@
-   
 import {
   Box,
   Button,
@@ -112,9 +111,10 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
           <Box>
             <Link href='/checkout'>
               <Button
-                variant='outline'
-                borderColor='brand.primary'
-                color='brand.primary'
+                bgColor='brand.primary'
+                color='white'
+                rounded='full'
+                _hover={{ bgColor: 'brand.primaryDark' }}
                 borderRadius='50px'
                 mr='1rem'
                 my='0.5rem'

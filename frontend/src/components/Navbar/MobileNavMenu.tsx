@@ -1,5 +1,3 @@
-   
-
 import { HamburgerIcon } from '@chakra-ui/icons'
 import {
   Drawer,
@@ -39,14 +37,13 @@ export const MobileNavMenu = () => {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader>
-            <Logo onclick={onClose}/>
+            <Logo onclick={onClose} />
           </DrawerHeader>
 
           <DrawerBody>
             {navItems.map(navItem => (
-              <Link href={navItem.href} onClick={onClose}>
+              <Link key={navItem.label} href={navItem.href} onClick={onClose}>
                 <Box
-                  key={navItem.label}
                   p='0.5rem'
                   rounded='sm'
                   fontSize='xl'

@@ -5,6 +5,14 @@ export default function Document () {
     <Html lang='en'>
       <Head />
       <body>
+        <div id='globalLoader'>
+          <img
+            src='cat_.gif'
+            width='300px'
+            alt=''
+          />
+          <h1>Loading...</h1>
+        </div>
         <Main />
         <NextScript />
       </body>

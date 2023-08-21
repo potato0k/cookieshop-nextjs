@@ -105,7 +105,9 @@ export const Cart = () => {
                 </Button>
                 <Link href='/checkout'>
                   <Button
-                    variant='outline'
+                    bgColor='brand.primary'
+                    color='white'
+                    _hover={{ bgColor: 'brand.primaryDark' }}
                     onClick={handleCheckout}
                   >
                     Checkout

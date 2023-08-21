@@ -1,10 +1,12 @@
 import { client } from '@sanity/lib/client'
 import { Hero } from '@src/components/Hero/Hero'
 import { AllProducts } from '@src/features/products'
-import { IBreadcrumbItem, ICategory, IProduct } from '@src/model'
+import { IBreadcrumbItem, IProduct } from '@src/model'
 import { NextPageWithLayout } from '../_app'
 import Layout from '@src/components/Layout/Layout'
 import { ReactElement } from 'react'
+import type { GetStaticPaths } from 'next'
+
 
 interface CategoryPageProps {
   products: IProduct[]
@@ -69,7 +71,8 @@ CategoryPage.getLayout = function getLayout (page: ReactElement) {
   return <Layout>{page}</Layout>
 }
 
-export async function getStaticPaths () {
+
+export const getStaticPaths: GetStaticPaths = async () => {
   const ids = await client.fetch(`*[_type == "category"]._id`)
   const paths = ids.map((id: string) => ({ params: { id } }))
 
@@ -79,7 +82,7 @@ export async function getStaticPaths () {
   }
 }
 
-export const getStaticProps = async (context: any) => {
+export async function getStaticProps (context: any) {
   const { params } = context
   const { id } = params
 
