@@ -1,4 +1,4 @@
-'use client'
+   
 
 import { Box, Flex, Stack } from '@chakra-ui/react'
 import { Logo } from '../Logo'

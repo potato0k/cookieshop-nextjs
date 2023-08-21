@@ -1,4 +1,4 @@
-'use client'
+   
 
 import { Box, Button } from '@chakra-ui/react'
 import { AppContext } from '@src/context/AppContext'

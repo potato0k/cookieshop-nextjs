@@ -1,4 +1,4 @@
-'use client'
+   
 
 import { SectionHeading } from '@/components/SectionHeading'
 import {

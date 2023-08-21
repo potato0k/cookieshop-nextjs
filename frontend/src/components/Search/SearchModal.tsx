@@ -1,21 +1,12 @@
-'use client'
-
 import {
   Box,
-  Button,
-  Divider,
   Input,
   InputGroup,
   InputLeftElement,
   Modal,
   ModalBody,
-  ModalCloseButton,
   ModalContent,
-  ModalFooter,
-  ModalHeader,
   ModalOverlay,
-  Text,
-  useDisclosure,
   useOutsideClick
 } from '@chakra-ui/react'
 import { IProduct } from '@src/model'

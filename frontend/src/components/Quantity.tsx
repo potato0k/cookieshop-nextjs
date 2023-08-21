@@ -1,4 +1,4 @@
-'use client'
+   
 
 import { Button, HStack, Input, useNumberInput } from '@chakra-ui/react'
 import React from 'react'

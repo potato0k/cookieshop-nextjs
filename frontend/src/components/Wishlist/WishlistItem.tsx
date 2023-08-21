@@ -1,4 +1,4 @@
-'use client'
+   
 
 import { Button, Grid, GridItem, Image, Text } from '@chakra-ui/react'
 import { AppContext } from '@src/context/AppContext'

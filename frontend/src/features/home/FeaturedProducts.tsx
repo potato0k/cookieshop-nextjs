@@ -1,4 +1,4 @@
-'use client'
+   
 import React from 'react'
 import { CSSProperties } from 'react'
 import { A11y, Autoplay, Navigation, Pagination } from 'swiper/modules'

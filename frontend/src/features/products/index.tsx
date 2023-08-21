@@ -1,4 +1,4 @@
-'use client'
+   
 import { Button, Flex } from '@chakra-ui/react'
 import { CustomBreadcrumb } from '@src/components/CustomBreadcrumb'
 import { ProductCard } from '@src/components/ProductCard'

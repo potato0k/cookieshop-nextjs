@@ -1,4 +1,4 @@
-'use client'
+   
 
 import { colors } from '@src/styles/theme'
 import Link from 'next/link'

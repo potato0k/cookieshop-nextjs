@@ -17,6 +17,7 @@ const Blog: NextPageWithLayout<BlogPageProps> = props => {
 
   return (
     <>
+
       <main>
         <Banner />
         <TopCategories categories={featuredItems[0].topCategories} />

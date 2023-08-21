@@ -1,4 +1,4 @@
-'use client'
+   
 
 import { Flex, Text, useDisclosure } from '@chakra-ui/react'
 import Link from 'next/link'

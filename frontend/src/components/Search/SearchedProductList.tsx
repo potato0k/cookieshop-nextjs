@@ -1,5 +1,3 @@
-'use client'
-
 import { Box, Divider, Flex, Image, Tag, Text } from '@chakra-ui/react'
 import { IProduct } from '@src/model'
 import Link from 'next/link'

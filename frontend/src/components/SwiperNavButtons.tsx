@@ -1,4 +1,4 @@
-'use client'
+   
 
 import React from 'react'
 import { Box, Center, IconButton } from '@chakra-ui/react'

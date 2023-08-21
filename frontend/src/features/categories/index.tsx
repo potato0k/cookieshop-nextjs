@@ -1,4 +1,4 @@
-'use client'
+   
 
 import { Grid } from '@chakra-ui/react'
 import { CategoryCard } from '@src/components/CategoryCard'
