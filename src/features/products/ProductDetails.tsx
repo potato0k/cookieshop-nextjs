@@ -75,7 +75,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
             mx='auto'
           />
 
-          <Flex mx='auto' maxWidth='340px' justify='center' justifyContent='space-between' gap={2}>
+          <Flex mx='auto' maxWidth='340px' justify='center' gap={2}>
             {imgArray.map((image, i) => (
               <>
                 <Image
