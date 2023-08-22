@@ -57,7 +57,7 @@ export async function getStaticProps (context: any) {
 `
   const product = await client.fetch(query, { slug })
 
-  return { props: { product } }
+  return { props: { product }, revalidate: 10 }
 }
 
 export default ProductDetailsPage

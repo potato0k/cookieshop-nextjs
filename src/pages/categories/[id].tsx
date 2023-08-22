@@ -7,7 +7,6 @@ import Layout from '@src/components/Layout/Layout'
 import { ReactElement } from 'react'
 import type { GetStaticPaths } from 'next'
 
-
 interface CategoryPageProps {
   products: IProduct[]
 }
@@ -71,7 +70,6 @@ CategoryPage.getLayout = function getLayout (page: ReactElement) {
   return <Layout>{page}</Layout>
 }
 
-
 export const getStaticPaths: GetStaticPaths = async () => {
   const ids = await client.fetch(`*[_type == "category"]._id`)
   const paths = ids.map((id: string) => ({ params: { id } }))
@@ -98,7 +96,8 @@ export async function getStaticProps (context: any) {
 
   console.log(products)
   return {
-    props: { products }
+    props: { products },
+    revalidate: 10
   }
 }
 
