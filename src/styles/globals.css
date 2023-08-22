@@ -1,3 +1,7 @@
+html {
+  min-height: 100vh;
+}
+
 #globalLoader {
   position: fixed;
   z-index: 9999;

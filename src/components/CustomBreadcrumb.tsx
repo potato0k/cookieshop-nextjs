@@ -19,6 +19,7 @@ export const CustomBreadcrumb = ({ items = [] }: ICustomBreadCrumbsProps) => {
       {items.length > 0 && (
         <Breadcrumb
           spacing='8px'
+          overflow='hidden'
           separator={<ChevronRightIcon color='gray.500' />}
           w={{ base: '100%', lg: '90%' }}
           py={{ base: '0.5rem', lg: '2rem' }}
