@@ -18,6 +18,7 @@ export default function App ({ Component, pageProps }: AppPropsWithLayout) {
       if (loader) loader.remove()
     }
   }, [])
+  
   const getLayout = Component.getLayout ?? (page => page)
 
   return getLayout(

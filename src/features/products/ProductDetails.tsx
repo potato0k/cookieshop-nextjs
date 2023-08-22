@@ -19,7 +19,7 @@ import { AddToWishlistButton } from '@src/components/Wishlist/AddToWishlistButto
 import { AppContext } from '@src/context/AppContext'
 import { getSubstring } from '@src/helpers'
 import { IBreadcrumbItem, IProduct } from '@src/model'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 interface ProductDetailsProps {
   product: IProduct
@@ -40,7 +40,11 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
   const [quantity, setQuantity] = useState(1)
   const { isAdded, addItem, resetItems } = useContext(AppContext)
   const [imageShown, setImageShown] = useState(product.mainImage)
-  const imgArray = [product.mainImage, ...product.gallery]
+  const imgArray = [product.mainImage]
+
+  if (typeof product.gallery?.length !== 'undefined') {
+    imgArray.push(...product.gallery)
+  }
 
   return (
     <>
@@ -74,25 +78,30 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
             rounded='lg'
             mx='auto'
           />
-
-          <Flex mx='auto' maxWidth='340px' justify='center' gap={2}>
-            {imgArray.map((image, i) => (
-              <>
-                <Image
-                  key={i}
-                  onClick={() => setImageShown(image)}
-                  src={image}
-                  alt={product.name}
-                  boxSize='70px'
-                  rounded='md'
-                  objectFit='cover'
-                  mt='0.7rem'
-                  cursor='pointer'
-                  _hover={{ boxSize: '75px', borderWidth:'100px', borderColor: 'brand.primary' }}
-                />
-              </>
-            ))}
-          </Flex>
+          {typeof product.gallery?.length !== 'undefined' && (
+            <Flex mx='auto' maxWidth='340px' justify='center' gap={2}>
+              {imgArray.map((image, i) => (
+                <>
+                  <Image
+                    key={i}
+                    onClick={() => setImageShown(image)}
+                    src={image}
+                    alt={product.name}
+                    boxSize='70px'
+                    rounded='md'
+                    objectFit='cover'
+                    mt='0.7rem'
+                    cursor='pointer'
+                    _hover={{
+                      boxSize: '75px',
+                      borderWidth: '100px',
+                      borderColor: 'brand.primary'
+                    }}
+                  />
+                </>
+              ))}
+            </Flex>
+          )}
         </GridItem>
         <GridItem p='1rem'>
           <Heading>{product.name}</Heading>
