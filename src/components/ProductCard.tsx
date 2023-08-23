@@ -1,5 +1,4 @@
 import {
-  Box,
   Card,
   CardBody,
   Center,
@@ -7,7 +6,6 @@ import {
   Heading,
   Image,
   Spinner,
-  Stack,
   Text
 } from '@chakra-ui/react'
 import React, { useState } from 'react'
@@ -84,7 +82,7 @@ export const ProductCard = ({ product }: IProductCardProps) => {
             </Flex>
             <Text>{getSubstring(product.description, 20)}...</Text>
             <Rating rating={product.rating} />
-            <AddToCartButton product={product} count={1} />
+            <Center><AddToCartButton product={product} count={1} /></Center>
           </Flex>
         </Flex>
       </CardBody>

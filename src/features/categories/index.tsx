@@ -1,5 +1,3 @@
-   
-
 import { Grid } from '@chakra-ui/react'
 import { CategoryCard } from '@src/components/CategoryCard'
 import { ICategory } from '@src/model'
@@ -13,7 +11,11 @@ export const AllCategories = ({ categories }: IAllCategoriesProps) => {
   return (
     <Grid
       w={{ base: '100%', lg: '90%' }}
-      templateColumns={{ base: 'repeat(2,1fr)', lg: 'repeat(4,1fr)' }}
+      templateColumns={{
+        base: 'repeat(1,1fr)',
+        md: 'repeat(2,1fr)',
+        lg: 'repeat(4,1fr)'
+      }}
       gap='20px'
       mx='auto'
       p='2rem'

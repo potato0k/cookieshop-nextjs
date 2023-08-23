@@ -26,7 +26,7 @@ export const Banner = () => {
   return (
     <Flex {...bannerStyles}>
       <Box w={{ base: '100%', lg: '50%' }}>
-        <Stack gap='3'>
+        <Stack gap={{ base: '1', lg: '3' }}>
           <Heading {...bannerHeadingStyles}>
             Get Freshly Baked Cookies Anywhere Anytime
           </Heading>

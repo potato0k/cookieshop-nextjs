@@ -11,10 +11,10 @@ export const Logo = ({onclick}: LogoProps) => {
   return (
     <Link href='/' onClick={onclick}>
       <Flex gap="1">
-        <Text fontWeight='bold' fontSize='lg' color='brand.primary'>
+        <Text fontWeight='bold' fontSize='md' color='brand.primary'>
           Cookie
         </Text>
-        <Text fontSize='lg' color='gray.800'>
+        <Text fontSize='md' color='gray.800'>
           Shop
         </Text>
       </Flex>

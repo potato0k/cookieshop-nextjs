@@ -78,10 +78,10 @@ const heroCardStyles: CardProps = {
   justify: 'center',
   overflow: 'hidden',
   variant: 'outline',
-  w: { base: '100%', md: '90%' },
+  w: { base: '98%', md: '90%' },
   mx: 'auto',
   shadow: 'sm',
-  p: '2rem',
+  p: { base: '1rem', lg: '2rem' },
   mb: '2rem'
 }
 

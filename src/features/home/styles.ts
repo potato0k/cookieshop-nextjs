@@ -11,10 +11,10 @@ export const bannerStyles: FlexProps = {
   mx: 'auto',
   justify: 'center',
   align: 'center',
-  gap: '2',
+  gap: { base: '6', lg: '2' },
   flexDir: { base: 'column', lg: 'row' },
-  px: '4rem',
-  py: '2rem',
+  px: { base: '1.8rem', lg: '4rem' },
+  py: { base: '1.6rem', lg: '2rem' },
 }
 
 export const bannerHeadingStyles: HeadingProps = {
