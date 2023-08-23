@@ -13,7 +13,7 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: 'jwt'
   },
-  secret: 'any-secret-word',
+  secret: process.env.SECRET, 
   adapter: SanityAdapter(client)
 }
 
