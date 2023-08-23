@@ -35,7 +35,7 @@ export const ProductCard = ({ product }: IProductCardProps) => {
         <Flex mt='5' flexDir='column'>
           <AddToWishlist product={product} />
           <Link href={`/products/${product.slug}`}>
-            {isLoading && (
+            {/* {isLoading && (
               <Center mx='auto' boxSize={{ base: '100', md: '200' }}>
                 <Spinner
                   thickness='4px'
@@ -45,11 +45,11 @@ export const ProductCard = ({ product }: IProductCardProps) => {
                   size='xl'
                 />
               </Center>
-            )}
+            )} */}
             <Image
-              onLoad={() => {
-                setIsLoading(false)
-              }}
+              // onLoad={() => {
+              //   setIsLoading(false)
+              // }}
               objectFit='cover'
               boxSize={{ base: '100', md: '200' }}
               alt={product.name}
@@ -57,7 +57,7 @@ export const ProductCard = ({ product }: IProductCardProps) => {
               mx='auto'
               mb='0.8rem'
               borderRadius='lg'
-              display={isLoading ? 'none' : 'block'}
+              // display={isLoading ? 'none' : 'block'}
             />
             {/* <Box
               boxSize={{ base: '125px', lg: '200px' }}

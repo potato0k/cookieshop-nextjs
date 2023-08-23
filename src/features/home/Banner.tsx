@@ -21,7 +21,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 export const Banner = () => {
-  const [isLoading, setIsLoading] = useState(true)
+  // const [isLoading, setIsLoading] = useState(true)
 
   return (
     <Flex {...bannerStyles}>
@@ -39,7 +39,7 @@ export const Banner = () => {
         </Stack>
       </Box>
       <Box w={{ base: '100%', lg: '50%' }} mt='1rem'>
-        {isLoading && (
+        {/* {isLoading && (
           <Center mx='auto'>
             <Spinner
               thickness='4px'
@@ -49,16 +49,16 @@ export const Banner = () => {
               size='xl'
             />
           </Center>
-        )}
+        )} */}
 
         <Image
-          onLoad={() => {
-            setIsLoading(false)
-          }}
+          // onLoad={() => {
+          //   setIsLoading(false)
+          // }}
           src='cookie_banner.png'
           alt='banner_img'
           {...bannerImageStyles}
-          display={isLoading ? 'none' : 'block'}
+          // display={isLoading ? 'none' : 'block'}
         ></Image>
       </Box>
     </Flex>
