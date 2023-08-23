@@ -31,7 +31,7 @@ export const Hero = ({
   btnLink,
   imgStr
 }: IHeroProps) => {
-  const [isLoading, setIsLoading] = useState(true)
+  // const [isLoading, setIsLoading] = useState(true)
   return (
     <Card {...heroCardStyles}>
       <Box w={{ base: '100%', md: '50%' }} mx='auto' mb='2rem'>
@@ -44,7 +44,7 @@ export const Hero = ({
         </Stack>
       </Box>
       <Box w={{ base: '100%', sm: '50%' }} mx='auto'>
-        {isLoading && (
+        {/* {isLoading && (
           <Center mx='auto'>
             <Spinner
               thickness='4px'
@@ -54,18 +54,18 @@ export const Hero = ({
               size='xl'
             />
           </Center>
-        )}
+        )} */}
         <Image
-          onLoad={() => {
-            setIsLoading(false)
-          }}
+          // onLoad={() => {
+          //   setIsLoading(false)
+          // }}
           w={{ base: '100%', '2xl': '611px' }}
           src={imgStr}
           alt={title}
           objectFit='cover'
           rounded='md'
           mx='auto'
-          display={isLoading ? 'none' : 'block'}
+          // display={isLoading ? 'none' : 'block'}
         />
       </Box>
     </Card>
